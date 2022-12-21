@@ -18,11 +18,15 @@ class VendaFilters(filters.FilterSet):
     CriadoDataMin = filters.DateFilter(field_name="data", lookup_expr='gte')
     CriadoDataMax = filters.DateFilter(field_name="data", lookup_expr='lte')
 
+    id = filters.NumberFilter(field_name="id")
+
     class Meta:
         model = Venda
         fields = '__all__'
 
 class UnidadeFilters(filters.FilterSet):
+
+    id = filters.NumberFilter(field_name="id")
 
     class Meta:
         model = Unidade
@@ -30,24 +34,26 @@ class UnidadeFilters(filters.FilterSet):
 
 class DiretoriaFilters(filters.FilterSet):
 
+    id = filters.NumberFilter(field_name="id")
+
     class Meta:
         model = Diretoria
         fields = '__all__'
 
 class DiretorFilters(filters.FilterSet):
-
+    id = filters.NumberFilter(field_name="id")
     class Meta:
         model = Diretor
         fields = '__all__'
 
 class GerenteFilters(filters.FilterSet):
-
+    id = filters.NumberFilter(field_name="id")
     class Meta:
         model = Gerente
         fields = '__all__'
 
 class VendedorFilters(filters.FilterSet):
-
+    id = filters.NumberFilter(field_name="id")
     class Meta:
         model = Vendedor
         fields = '__all__'

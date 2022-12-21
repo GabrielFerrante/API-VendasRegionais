@@ -3,6 +3,7 @@ from rest_framework.routers import SimpleRouter
 
 from .views import (
     VendasViewSet,
+    VendaViewSet,
     UnidadeViewSet,
     DiretoriaViewSet,
     DiretorViewSet,
@@ -12,6 +13,7 @@ from .views import (
 
 router = SimpleRouter()
 router.register('vendas', VendasViewSet)
+router.register('venda', VendaViewSet)
 router.register('unidades', UnidadeViewSet)
 router.register('diretorias', DiretoriaViewSet)
 router.register('diretores', DiretorViewSet)
