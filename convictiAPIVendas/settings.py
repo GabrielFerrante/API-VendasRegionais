@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-=bg=9rfv9gh*wui7^69v7b-zdh4zafaej+*8z4ezi9+)@&+dz(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1","localhost"]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'convictiAPIVendas.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'bancoVendas.sqlite3',
     }
 }
 
