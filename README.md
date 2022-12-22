@@ -72,7 +72,7 @@ O retorno de cada endpoint é em formato Json.
 ### Métodos GET
   </br>
   Endpoint - 127.0.0.1:8000/api/v1/vendas/ (Retorna todas as vendas)</br>
-  ------ Filtros</br>
+  ------ Filtros com exemplos</br>
   ---------- .../v1/vendas/?id=2 (Retorna uma venda específica)</br>
   ---------- .../v1/vendas/?data=2022-12-19 (Retorna as vendas de uma data específica)</br>
   ---------- .../v1/vendas/?hora=00:10:51 (Retorna as vendas de uma hora específica)</br>
