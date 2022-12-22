@@ -112,18 +112,18 @@ O retorno de cada endpoint é em formato Json.
   **Consultar os demais endpoints para consultar o ID de vendedores e unidades para realizar o cadastro</br>
   Exemplo de POST com Python:
   
+    headers = {'Authorization' : 'Token xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'}
+    def test_post_venda(self):
   
-  
-  def test_post_venda(self):
-        novaVenda = { 
-            "data": date.today(), 
-            "hora": datetime.now().strftime("%H:%M:%S"), 
-            "valorTotal": 4250, 
-            "latLong": "-23.0392039, -70.232134", 
-            "roaming": False, 
-            "unidadeProx": 4, 
-            "vendedor": 2 
-        }
+          novaVenda = { 
+              "data": date.today(), 
+              "hora": datetime.now().strftime("%H:%M:%S"), 
+              "valorTotal": 4250, 
+              "latLong": "-23.0392039, -70.232134", 
+              "roaming": False, 
+              "unidadeProx": 4, 
+              "vendedor": 2 
+          }
 
-        resultado = requests.post(url=self.url_base_venda,headers=self.headers,data=novaVenda)
-        assert resultado.status_code == 201`
+          resultado = requests.post(url='http://localhost:8000/api/v1/venda/',headers=headers,data=novaVenda)
+          assert resultado.status_code == 201`
