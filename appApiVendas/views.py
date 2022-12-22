@@ -39,10 +39,10 @@ from .serializers import (
 
 #View VENDAS com GET
 class VendasViewSet(viewsets.ModelViewSet):
-    queryset = Venda.objects.all()
-    serializer_class = VendaSerializer
+    queryset = Venda.objects.all() #Informando o conjunto de dados base
+    serializer_class = VendaSerializer #Informando o serializador de dados de resposta
     filter_backends = (filters.DjangoFilterBackend,)
-    filterset_class = VendaFilters
+    filterset_class = VendaFilters #Filtros do endpoint
 
     
 
@@ -77,6 +77,7 @@ class VendaViewSet(VendasViewSet, generics.RetrieveUpdateAPIView):
         else:
             return Response(data="Venda inexistente!", status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+    #função auxiliar para validar dados das FK de Venda
     def validation_data_relations(self, IDvendedor, IDunidadeProx):
         vendedores = Vendedor.objects.filter(pk = IDvendedor)
         unidades = Unidade.objects.filter(pk = IDunidadeProx)
@@ -91,6 +92,7 @@ class VendaViewSet(VendasViewSet, generics.RetrieveUpdateAPIView):
         else:
             return 0
     
+    #função para padronizar os dados
     def get_data_venda(self,request):
         tupla = self.validation_data_relations(
             request.data['vendedor'],
