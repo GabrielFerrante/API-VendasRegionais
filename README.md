@@ -14,6 +14,12 @@ docker-compose up
 </code>
 
 Este repositório já possui um pequeno banco de dados para teste, que já vai ser lido quando o container for executado.
+A API foi testada com testes automatizados com PyTest e com o Software Insomnia (manualmente).
+
+
+Execute o arquivo na raiz do repositório:
+
+<code>pytest test_pytest.py</code>
 
 ## Estrutura do banco de dados
 
@@ -112,6 +118,7 @@ O retorno de cada endpoint é em formato Json.
   **Consultar os demais endpoints para consultar o ID de vendedores e unidades para realizar o cadastro</br>
   Exemplo de POST com Python:
   
+    import requests
     headers = {'Authorization' : 'Token xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'}
     def test_post_venda(self):
   
@@ -127,3 +134,25 @@ O retorno de cada endpoint é em formato Json.
 
           resultado = requests.post(url='http://localhost:8000/api/v1/venda/',headers=headers,data=novaVenda)
           assert resultado.status_code == 201`
+          
+          
+### Métodos PUT
+  </br>
+  Endpoint - 127.0.0.1:8000/api/v1/venda/ (Realiza a atualização de uma venda, basta informar o ID da venda)</br>
+  Exemplo de PUT com Python:
+  
+  
+    import requests
+    def test_put_venda(self):
+        venda = {
+            "data": "2022-12-21",
+            "hora": "12:54:23",
+            "valorTotal": 4250,
+            "latLong": "-15.601754458320847, -56.09832706558087",
+            "roaming": False,
+            "unidadeProx": 1,
+            "vendedor": 2
+        }
+        
+        resultado = requests.put(url=http://localhost:8000/api/v1/venda/+"21/",headers=headers,data=venda)
+        assert resultado.status_code == 201
