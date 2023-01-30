@@ -8,6 +8,8 @@ Banco de dados SQLite
 Clone o repositório e construa o ambiente com o Docker-compose
 
 
+Já tenha o Python instalado !
+
 <code>git clone https://github.com/GabrielFerrante/API-VendasRegionais.git
 docker-compose build
 docker-compose up
